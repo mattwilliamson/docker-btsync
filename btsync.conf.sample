@@ -1,0 +1,47 @@
+//!/usr/sbin/btsync-daemon --config
+//
+// (c) 2013 BitTorrent Inc.
+//
+// This btsync configuration file features the complete set of
+// commented configuration directives
+//
+{ 
+  "device_name": "My BTSync Server",
+  "listening_port" : 3369,                       // 0 - randomize port
+  
+/* storage_path dir contains auxilliary app files
+   if no storage_path field: .sync dir created in the directory 
+   where binary is located.
+   otherwise user-defined directory will be used 
+*/
+  "storage_path" : "/root/btsync",
+
+// uncomment next line if you want to set location of pid file
+// "pid_file" : "/var/run/btsync/btsync.pid",
+
+  "check_for_updates" : false, 
+  "use_upnp" : false,                              // use UPnP for port mapping
+
+
+/* limits in kB/s
+   0 - no limit
+*/
+  "download_limit" : 0,                       
+  "upload_limit" : 0, 
+
+/* remove "listen" field to disable WebUI
+   remove "login" and "password" fields to disable credentials check
+*/
+  "webui" :
+  {
+    "listen" : "0.0.0.0:8888",
+    "login" : "webusername",
+    "password" : "webp4ssw3rd"
+  }
+
+/* !!! if you set shared folders in config file WebUI will be DISABLED !!!
+   shared directories specified in config file
+   override the folders previously added from WebUI.
+*/
+
+}
